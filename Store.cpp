@@ -123,6 +123,10 @@ std::vector<std::string> Store::get_all_product_ids_for_family(std::string famil
     return out;
 }
 
+const Product &Store::get_product(std::string id) const {
+    return products.find(id)->second;
+}
+
 // Dynamic lib entry points for main executable
 extern "C" Store* create_store() {
     return new Store;
